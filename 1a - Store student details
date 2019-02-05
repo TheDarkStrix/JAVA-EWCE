@@ -1,0 +1,40 @@
+//studentdetails.java
+import java.util.Scanner;
+public class studentdetails {
+public static void main(String args[]){
+	Scanner input = new Scanner(System.in);
+	System.out.println("Enter the no of Students");
+	int number = input.nextInt();
+	students s[] = new students[number];
+	for(int i=0;i<number;i++){
+		s[i]= new students();
+		s[i].read();
+	}
+	System.out.printf( "%-20s %-20s %-20s %-20s %n", "USN", "NAME","BRANCH","PHONE);
+	for(int i=0;i<number;i++){
+		
+		s[i].display();
+	}
+}}
+//students.java
+import java.io.*;
+import java.util.*;
+public class students {
+String USN,name,branch,phone;
+Scanner input = new Scanner(System.in);
+
+void read(){
+	System.out.println("Enter Student Details");
+	System.out.println("USN");
+	USN=input.nextLine();
+	System.out.println("Name");
+	name=input.nextLine();
+	System.out.println("Branch");
+	branch=input.nextLine();
+	System.out.println("Phone");
+	phone=input.nextLine();
+}
+void display(){
+	System.out.printf( "%-20s %-20s %-20s %-20s %n", USN, name,branch,phone);
+}
+}
