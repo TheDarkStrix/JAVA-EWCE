@@ -1,0 +1,85 @@
+package practice;
+import java.util.*;
+
+class base {
+	Scanner input = new Scanner(System.in);
+double sal;
+String sid,name,phone;
+void read(){
+	System.out.println("Staff ID:");
+	sid=input.nextLine();
+	System.out.println("Name:");
+	name=input.nextLine();
+	System.out.println("Phone:");
+	phone=input.nextLine();
+	System.out.println("Salary:");
+	sal=input.nextDouble();
+	
+}
+void display(){
+	System.out.println("The entered details are :-");
+	System.out.println(sid);
+	System.out.println(name);
+	System.out.println(phone);
+	System.out.println(sal);
+}
+}
+class teaching extends base{
+	String domain;
+	int publications;
+	void read(){
+		super.read();
+		System.out.println("Domain:");
+		domain=input.next();
+		System.out.println("Publications:");
+		publications=input.nextInt();
+	}
+	void display(){
+		super.display();
+		System.out.println(domain);
+		System.out.println(publications);
+	}
+}
+class technical extends base{
+	String skills;
+		void read(){
+		super.read();
+		System.out.println("Skills:");
+		skills=input.next();
+	}
+	void display(){
+		super.display();
+		System.out.println(skills);
+	}
+}
+class contract extends base{
+	String contract;
+		void read(){
+		super.read();
+		System.out.println("Contract:");
+		contract=input.nextLine();
+	}
+	void display(){
+		super.display();
+		System.out.println(contract);
+	}
+}
+public class superclass{
+public static void main(String args[]){
+	teaching teach = new teaching();
+	technical tech = new technical();
+	contract con = new contract();
+	System.out.println("Enter Teaching Details:");
+	teach.read();
+	System.out.println("Enter Teachnical Details:");
+	tech.read();
+	System.out.println("Enter Contract Details:");
+	con.read();
+	//
+	teach.display();
+	tech.display();
+	con.display();
+	//
+	
+}
+}
