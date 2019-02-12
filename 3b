@@ -1,0 +1,43 @@
+import java.util.*;
+
+class MyThread1 extends Thread{
+	public void run(){
+		int i=1;
+		Scanner read = new Scanner(System.in);
+		System.out.println("Enter the number of random numbers to be generated");
+		int n=read.nextInt();
+		try{
+			while(i<=n){
+				Random random = new Random();
+				threeb.r=random.nextInt(100);
+				System.out.println(i+"--> random integer generated is :"+threeb.r);
+				new Mythread2().start();
+				new Mythread3().start();
+				Thread.sleep(1000);
+				System.out.println("\n\n");
+				i++;
+			}
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
+}
+
+class Mythread2 extends Thread{
+	public void run(){
+		System.out.println("Sqaure of "+threeb.r+"is equal to"+(threeb.r*threeb.r));
+	}
+}
+class Mythread3 extends Thread{
+	public void run(){
+		System.out.println("Cube of "+threeb.r+"is equal to"+(threeb.r*threeb.r*threeb.r));
+	}
+}
+public class threeb extends Thread {
+static int r;
+public static void main(String args[]){
+	MyThread1 thread1=new MyThread1();
+	thread1.start();
+}
+}
