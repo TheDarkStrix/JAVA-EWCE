@@ -1,0 +1,25 @@
+import java.util.*;
+
+class Customer{
+	String data,name,dob;
+	void read(){
+		Scanner read=new Scanner(System.in);
+		System.out.println("Enter <name,dd/mm/yyyy>");
+		data=read.nextLine();
+	}
+	void display(){
+		String []S=data.split(",");
+		name=S[0];
+		dob=S[1];
+		StringTokenizer str=new StringTokenizer(dob,"/");
+		System.out.println(name+","+str.nextToken()+","+str.nextToken()+","+str.nextToken());
+	}
+}
+
+public class twob {
+public static void main(String args[]){
+	Customer cus = new Customer();
+	cus.read();
+	cus.display();
+}
+}
